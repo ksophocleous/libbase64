@@ -7,6 +7,10 @@ include(CheckCXXCompilerFlag)
 
 option(LIBBASE64_BUILD_TESTS "Build tests for this library" OFF)
 
+if(CMAKE_COMPILER_IS_GNUCXX)
+        set(CMAKE_CXX_FLAGS "-std=c++11")
+endif()
+
 if(LIBBASE64_BUILD_TESTS)
 	enable_testing()
 endif()
